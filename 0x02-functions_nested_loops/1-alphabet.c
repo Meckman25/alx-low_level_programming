@@ -2,11 +2,11 @@
 #include <unistd.h>
 
 /**
- * main - main entry point
- * Return: returns zero on success
+ * print_alphabet - Entry point
+ * Return:0
  */
 
-int main(void)
+void print_alphabet(void)
 {
 	char c = 'a';
 
