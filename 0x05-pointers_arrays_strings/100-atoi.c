@@ -3,34 +3,44 @@
 /**
  * int _atoi - converts sting to int
  * @s: string to be coverted
- * Return: 0
+ * Return: int converted to string
  */
 
 int _atoi(char *s)
 {
-    char str[] = "12345"; // Replace this with your desired input string
-    int result = _atoi(str);
-    
-    printf("The integer value is: %d\n", result);
-    
-    return 0;
+	int i, d, n, len, f, digit;
 
+	i = 0;
+	d = 0;
+	n = 0;
+	len = 0;
+	f = 0;
+	digit = 0;
 
-		int _atoi(char *s) {
-		int result = 0;
-		int sign = 1;
+	while (s[len] != '\0')
+		len++;
 
-    while (*s == ' ' || *s == '\t' || *s == '\n')
-        s++;
-    if (*s == '-' || *s == '+') {
-        if (*s == '-')
-            sign = -1;
-	s++
-    }
-    while (*s >= '0' && *s <= '9') {
-        result = result * 10 + (*s - '0');
-	s++
-    return sign * result;
-}
+	while (i < len && f == 0)
+	{
+		if (s[i] == '-')
+			++d;
 
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			digit = s[i] - '0';
+			if (d % 2)
+				digit = -digit;
+			n = n * 10 + digit;
+			f = 1;
+			if (s[i + 1] < '0' || s[i + 1] > '9')
+				break;
+			f = 0;
+		}
+		i++;
+	}
+
+	if (f == 0)
+		return (0);
+
+	return (n);
 }
